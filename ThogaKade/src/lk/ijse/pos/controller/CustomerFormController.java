@@ -99,7 +99,7 @@ public class CustomerFormController {
                             new Alert(Alert.AlertType.WARNING,
                                     "Sonthing Went Wrong!Try Again", ButtonType.OK).show();
                         } else {
-                            System.out.println("Ushan");
+                            System.out.println("1");
                         }
                     } catch (Exception e1) {
                         e1.printStackTrace();

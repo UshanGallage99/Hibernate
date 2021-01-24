@@ -105,7 +105,7 @@ public class ItemFormController {
                             new Alert(Alert.AlertType.WARNING,
                                     "Try Again", ButtonType.OK).show();
                         } else {
-                            System.out.println("Ushan");
+                            System.out.println("1");
                         }
 
 
