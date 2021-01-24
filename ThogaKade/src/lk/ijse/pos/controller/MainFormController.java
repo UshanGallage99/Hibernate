@@ -12,11 +12,13 @@ public class MainFormController {
     public AnchorPane root;
 
     public void openCustomerForm(MouseEvent mouseEvent) throws IOException {
-        setUI("CustomerForm.fxml");
+        this.root.getChildren().clear();
+        this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/CustomerForm.fxml")));
     }
 
     public void openItemForm(MouseEvent mouseEvent) throws IOException {
-        setUI("ItemForm.fxml");
+        this.root.getChildren().clear();
+        this.root.getChildren().add(FXMLLoader.load(this.getClass().getResource("../view/ItemForm.fxml")));
     }
 
     public void openOrderForm(MouseEvent mouseEvent) {
@@ -25,12 +27,12 @@ public class MainFormController {
     public void openPlaceOrderForm(MouseEvent mouseEvent) {
     }
 
-    private void setUI(String location) throws IOException {
+    /*private void setUI(String location) throws IOException {
         this.root.getChildren().clear();
         this.root.getChildren()
                 .add(FXMLLoader.
                         load(this.getClass().getResource("/view/" +
                                 location)));
-    }
+    }*/
 
 }

@@ -105,7 +105,7 @@ public class ItemFormController {
                             new Alert(Alert.AlertType.WARNING,
                                     "Try Again", ButtonType.OK).show();
                         } else {
-                            System.out.println("UShan");
+                            System.out.println("Ushan");
                         }
 
 
@@ -116,11 +116,33 @@ public class ItemFormController {
             }
             tableItem.setItems(tmList);
         } catch (Exception e) {
-             new Alert(Alert.AlertType.WARNING,"oops! cannot load data to the table").show();
+             new Alert(Alert.AlertType.WARNING,"Something Went Wrong !").show();
         }
     }
 
     public void saveOnAction(ActionEvent actionEvent) {
+        String code = txtItemCode.getText();
+        String description = txtDescription.getText();
+        double unitPrice = Double.parseDouble(txtPrice.getText());
+        int qty = Integer.parseInt(txtQtyOnHand.getText());
+
+        try {
+            if(itemBO.add(new ItemDTO(
+                    code,
+                    description,
+                    unitPrice,
+                    qty
+            ))){
+                txtItemCode.setText(null);
+                txtDescription.setText(null);
+                txtPrice.setText(null);
+                txtQtyOnHand.setText(null);
+                new Alert(Alert.AlertType.INFORMATION, "Item Added !").show();
+                findAll();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     public void getDataOnAction(ActionEvent actionEvent) {

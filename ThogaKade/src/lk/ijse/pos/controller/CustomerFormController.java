@@ -108,7 +108,7 @@ public class CustomerFormController {
             }
             tableCustomer.setItems(tmList);
         } catch (Exception e) {
-            new Alert(Alert.AlertType.WARNING,"oops! cannot load data to the table").show();
+            new Alert(Alert.AlertType.WARNING,"Something went wrong !").show();
         }
     }
 
@@ -137,7 +137,7 @@ public class CustomerFormController {
                     address,
                     salary
             )));{
-                new Alert(Alert.AlertType.CONFIRMATION, "Do you wanna Save it?").showAndWait();
+                new Alert(Alert.AlertType.CONFIRMATION, "Sure ?").showAndWait();
                 txtId.setText(null);
                 txtName.setText(null);
                 txtSalary.setText(null);
@@ -145,7 +145,7 @@ public class CustomerFormController {
                findAll();
             }
         } catch (Exception e) {
-            new Alert(Alert.AlertType.ERROR, "Something Happened. try again carefully!").showAndWait();
+            new Alert(Alert.AlertType.ERROR, "Try again!").showAndWait();
         }
     }
 }
